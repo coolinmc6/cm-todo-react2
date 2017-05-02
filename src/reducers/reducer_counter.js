@@ -1,4 +1,4 @@
-export default function(state = 5, action) {
+export default function(state = 0, action) {
 	switch(action.type) {
 		case 'INCREMENT':
 			console.log(action.payload)
