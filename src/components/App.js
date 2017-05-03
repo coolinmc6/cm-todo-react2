@@ -6,8 +6,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hello from the App!!
-        
+      	<h1>React-Redux Todo App</h1>
         <TodoList />
       </div>
     );

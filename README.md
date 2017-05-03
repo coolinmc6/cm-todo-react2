@@ -26,7 +26,9 @@ I am going to write my ToDo based on my little todo.
 
   export default TodoList;
   ```
-    
+
+
+
     - it isn't shown here but my TodoList component was imported into my App component
 
 3. Decide what you NEED to have saved in state: a single value? an object? an array of objects?
@@ -57,7 +59,8 @@ I am going to write my ToDo based on my little todo.
   - As a quick reminder, this is how I changed my component into a container:
   1. Import connect from 'react-redux'					
   	`import { connect } from 'react-redux';`				
-  2. Add my mapStateToProps function					
+  2. Add my mapStateToProps function		
+
   	```js
   	function mapStateToProps(state) {				
   		return {			
@@ -85,6 +88,7 @@ I am going to write my ToDo based on my little todo.
 
 7. Connect Reducer to rootReducer
   - This part is obviously not very difficult:
+  
   ```js
   import { combineReducers } from 'redux';
   import CounterReducer from './reducer_counter';	
@@ -97,6 +101,7 @@ I am going to write my ToDo based on my little todo.
   	
   export default rootReducer;	
   ```
+
 8. Bind my Action Creator to Container
   - **NOTE:** if I simply put `addTodo(todo)`, the action will be called but it WILL NOT be connected to Redux.  After mapping
   dispatch to props and including it in my export statement, I had to remember to call `this.props.addTodo(todo)` before it started
@@ -106,3 +111,39 @@ I am going to write my ToDo based on my little todo.
 edit todos, basic styling.
 - Take notes on how I did the input and local state...it always trips me up and I simply need to get it into my head how this 
 thing works.
+
+
+## Edit Todos
+- How do I edit a todo?  In this case, how do I toggle the complete flag?
+  - Find the todo that you need to toggle
+    - this isn't too bad.  I don't really need to run this through Redux as I already have my list of todo items, I just need to
+    find it
+  - Toggle the 'complete' value
+    - Again, I don't need to run this through Redux as I'm just flipping the value.  I could do it in the action creator but for
+    this example, I won't
+  - Update the list of todos WITHOUT MUTATING the array
+    - this DOES need to go through Redux. Issue an action with the updated todo.  That todo will need to go through the todos 
+    reducer where it will be sliced appropriately...
+- This is how it works:
+  - A user clicks on the item to toggle, calling the toggleTodoItem function with one argument, the todo's ID
+  - in that function, the todo is found (findByID) and toggled (toggleTodo), neither of which requires an action
+  - Then, the action creator toggleTodoAction is called and it is sent the updated todo
+  - The action creator doesn't do anything besides create the action.  I theoretically could've done everything here (find
+  the todo, toggle it) but for ease, I did not.
+  - Because I am changing the todos array, the editing functionality MUST live inside the Todos Reducer.  So I simply added
+  another case to the switch statement.
+  - Inside my case statement, I find the index of the item that I want to replace and essentially create a new array with
+  the updated todo and NOT the old one.  This does not mutate the array, which is important.
+  - After editing my basic styling, I can now see when an item is "complete" or not
+
+## Next Steps
+- be able to delete a todo
+- better styling
+
+
+
+
+
+
+
+

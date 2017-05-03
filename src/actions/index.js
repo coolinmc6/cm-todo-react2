@@ -12,3 +12,10 @@ export function addTodo(todo) {
 		payload: todo
 	}
 }
+
+export function toggleTodoAction(updatedTodo) {
+	return {
+		type: 'TOGGLE_TODO',
+		payload: updatedTodo
+	}
+}

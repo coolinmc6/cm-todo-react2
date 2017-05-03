@@ -3,3 +3,66 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+h1 {
+	text-align: center;
+}
+#main {
+	padding: 1rem;
+}
+.todolist-main {
+	text-align: center;
+	width: 95vw;
+	max-width: 700px;
+	margin: 0 auto;
+}
+input[name="addTodo"] {
+	width: 300px;
+	margin-right: 0.5rem;
+	font-size: 1.05rem;
+	margin-bottom: 1rem;
+}
+.add-btn {
+	padding: 0.15rem;
+	border-radius: 4px;
+	background-color: #1985A1;
+	color: #fff;
+	font-size: 1.05rem;
+
+}
+.todo-holder {
+	position: relative;
+}
+.todo-item {
+	padding: 1rem;
+	text-align: left;
+	border-top: 1px dashed #777;
+	
+}
+.complete {
+  text-decoration: line-through;
+}
+.delete-item {
+	color: red;
+	font-weight: bold;
+	display: inline-block;
+	position: absolute;
+	right: 0.1rem;
+	top: 0.35rem;
+	text-decoration: none;
+	font-family: sans-serif;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+.delete-item:hover {
+	border-radius: 4px;
+	background-color: #ddd;
+	opacity: 0.8;
+	
+}
+.filter-link {
+	display: inline-block;
+	padding: 0.15rem;
+	color: blue;
+	text-decoration: none;
+	font-size: 1.1rem;
+}
