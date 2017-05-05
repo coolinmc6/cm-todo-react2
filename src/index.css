@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 h1 {
 	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	/*font-family: Verdana;*/
 }
 #main {
 	padding: 1rem;
@@ -35,11 +39,13 @@ input[name="addTodo"] {
 .todo-item {
 	padding: 1rem;
 	text-align: left;
-	border-top: 1px dashed #777;
+	border-top: 2px dashed #1985A1;
 	
 }
+
 .complete {
   text-decoration: line-through;
+  color: #888;
 }
 .delete-item {
 	color: red;
@@ -57,6 +63,8 @@ input[name="addTodo"] {
 	border-radius: 4px;
 	background-color: #ddd;
 	opacity: 0.8;
+	background-color: red;
+	color: white;
 	
 }
 .filter-link {

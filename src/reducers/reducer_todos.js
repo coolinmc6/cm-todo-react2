@@ -19,6 +19,12 @@ export default function(state = todos, action) {
 								action.payload,
 								...state.slice(todoIndex+1)]
 			return updatedList;
+		case 'DELETE_TODO':
+			
+			const delIndex = state.findIndex((item) => item.ID === action.payload)
+			const newList = [...state.slice(0,delIndex),
+							...state.slice(delIndex+1)];
+			return newList;
 		default:
 			return state;
 	}

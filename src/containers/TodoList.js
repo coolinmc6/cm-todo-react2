@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { generateID, findByID, toggleTodo } from '../lib/Helpers';
 
-import { addTodo, toggleTodoAction } from '../actions';
+import { addTodo, toggleTodoAction, deleteTodo } from '../actions';
 import { bindActionCreators } from 'redux';
 
 class TodoList extends Component {
@@ -51,7 +51,7 @@ class TodoList extends Component {
 								onClick={() => this.toggleTodoItem(todo.ID)}>
 									{todo.text}
 								</div>
-								<a className="delete-item" 
+								<a className="delete-item" onClick={() => this.props.deleteTodo(todo.ID)}
 									data-id={todo.ID} key={todo.ID}
 									>X</a>
 
@@ -72,7 +72,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({ addTodo, toggleTodoAction}, dispatch)
+	return bindActionCreators({ addTodo, toggleTodoAction, deleteTodo}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

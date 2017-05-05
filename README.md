@@ -1,5 +1,6 @@
 # README
 
+Here is the finished app: [https://coolinmc6.github.io/cm-todo-react2/](https://coolinmc6.github.io/cm-todo-react2/)
 I am going to write my ToDo based on my little todo.
 
 1. Understand what you are trying to ultimately achieve
@@ -139,6 +140,19 @@ thing works.
 ## Next Steps
 - be able to delete a todo
 - better styling
+
+## Delete Todos
+- To delete a todo, I need to change the TodosReducer.  To do that, I'll need to add a switch statement that looks for
+'DELETE_TODO'.  It will then remove that todo WITHOUT MUTATING the array and return the updated version that does not 
+include that todo.
+- My action creator will be called when the user clicks the red X.  OnClick, I will send the ID to my action creator.  That
+ID will be placed in an action as the payload, it will get sent to the reducer where the reducer will, using that ID, 
+find the todo I need to delete and remove it without mutating the array.
+- So that's done...that was pretty easy.  Once you set up the first action, whatever it may be, adding other ones is pretty
+easy.
+
+## Deploy to GitHub
+
 
 
 
