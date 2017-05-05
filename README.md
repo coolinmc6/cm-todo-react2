@@ -1,7 +1,9 @@
 # README
 
-Here is the finished app: [https://coolinmc6.github.io/cm-todo-react2/](https://coolinmc6.github.io/cm-todo-react2/)
-I am going to write my ToDo based on my little todo.
+Here is the finished app: [https://coolinmc6.github.io/cm-todo-react2/](https://coolinmc6.github.io/cm-todo-react2/).
+
+This Todo App is based on my previous [app](https://coolinmc6.github.io/CM-todo-react/) but it's built with Redux. 
+
 
 1. Understand what you are trying to ultimately achieve
   - I want a box to enter text for my Todo, a submit button, and somewhere to list them out
