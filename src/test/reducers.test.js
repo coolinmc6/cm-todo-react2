@@ -56,4 +56,16 @@ describe('todos reducer', () => {
 		}
 		expect(todos([], action)).toEqual([expectedTodo])
 	})
+	it('should delete a todo', () => {
+		const todosList = [{
+			text: "Test Todo", 
+			ID: 5, 
+			complete: false
+		}]
+		const action = {
+			type: 'DELETE_TODO',
+			payload: 5
+		}
+		expect(todos(todosList, action)).toEqual([])
+	})
 })
